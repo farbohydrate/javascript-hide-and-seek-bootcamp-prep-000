@@ -20,6 +20,13 @@ function deepestChild(){
   var grandChild = grand.querySelectorAll("div");
   for(let i = 0; i < grandChild.length; i++){
     var nextChild = grandChild[i].querySelectorAll("div");
-    if(nextChild.length)    
+    if(nextChild.length > 0){
+      for(let x = 0; x < nextChild.length; x++){
+        var nx = nextChild[x].querySelectorAll("div");
+        if(nx.length === 0){
+          return 
+        }
+      } 
+    }    
   }
 }
